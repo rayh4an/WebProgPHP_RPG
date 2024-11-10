@@ -187,8 +187,35 @@ if (isset($_POST['option'])) {
     </div>
 
     <div class="image">
-        <!-- Placeholder for static image based on the quest location -->
-        <p>Location Image</p>
+    <?php
+    if ($_SESSION['choice'] == 1) {
+        echo '<img src="images/villageFire1.png" style="width:100%; height:100%;">';
+    } elseif ($_SESSION['choice'] == 2) {
+        echo '<img src="images/GoblinKing2.png" style="width:100%; height:100%;">';
+    } elseif ($_SESSION['choice'] == 3) {
+        echo '<img src="images/forest3.jpg" style="width:100%; height:100%;">';
+    } elseif ($_SESSION['choice'] == 4) {
+        echo '<img src="images/doublePath4.jpg" style="width:100%; height:100%;">';
+    } elseif ($_SESSION['choice'] == 5) {
+        echo '<img src="images/troll5.png" style="width:100%; height:100%;">';
+    } elseif ($_SESSION['choice'] == 6) {
+        echo '<img src="images/mountain6.png" style="width:100%; height:100%;">';
+    } elseif ($_SESSION['choice'] == 7) {
+        echo '<img src="images/wizard7.png" style="width:100%; height:100%;">';
+    } elseif ($_SESSION['choice'] == 8) {
+        echo '<img src="images/bandits8.png" style="width:100%; height:100%;">';
+    } elseif ($_SESSION['choice'] == 9) {
+        echo '<img src="images/ruins9.png" style="width:100%; height:100%;">';
+    } elseif ($_SESSION['choice'] == 10) {
+        echo '<img src="images/spirit10.jpg" style="width:100%; height:100%;">';
+    } elseif ($_SESSION['choice'] == 11) {
+        echo '<img src="images/lake11.png" style="width:100%; height:100%;">';
+    } elseif ($_SESSION['choice'] == 12) {
+        echo '<img src="images/seaKing12.png" style="width:100%; height:100%;">';
+    } elseif ($_SESSION['choice'] == 13) {
+        echo '<img src="images/Tyrant13.png" style="width:100%; height:100%;">';
+    }
+    ?>
     </div>
 
     <div class="narration">
@@ -283,7 +310,7 @@ if (isset($_POST['option'])) {
     </form>
 
     <form action="menu.php" method="post">
-        <button type="submit" name="menu">Back</button>
+        <button type="submit" name="menu">Main Menu</button>
     </form>
 </div>
 
