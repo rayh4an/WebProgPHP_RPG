@@ -1,0 +1,12 @@
+PHP Role-Playing Game: The Shattered Throne
+
+The Shattered Throne is a Fantasy RPG utilizing PHP to give player choice about an adventurer on a joureny 
+to explore the world and face off against an evil tyrant who rules the world with an iron fist.
+
+Team Name: Coding Crusaders
+Team Leader: Rayhaan Mohamed - Worked on Powerpoint and Proposal, Programmer, Tester, Created Github repo 
+Team Memeber: James Han - Created Wireframe, Worked on Powerpoint, Programmer, Tester
+
+Codd Link: https://codd.cs.gsu.edu/~rmohamed4/WebProg/Project2/index.php
+Youtube: 
+Github: https://github.com/rayh4an/WebProgPHP_RPG
