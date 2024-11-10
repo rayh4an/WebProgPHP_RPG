@@ -35,8 +35,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
+    <link rel="stylesheet" href="authStyles.css">
 </head>
 <body>
+<div class="form-container">
     <h2>Login</h2>
     <form method="POST" action="login.php">
         <label for="email">Email:</label>
@@ -51,7 +53,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
         <button type="submit">Sign In</button>
     </form>
-    <button onclick="window.location.href='index.php'">Back</button>
+    <button onclick="window.location.href='index.php'" class="back-button">Back</button>
+</div>
 </body>
 </html>
 

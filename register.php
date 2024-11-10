@@ -19,8 +19,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <title>Register</title>
+    <link rel="stylesheet" href="authStyles.css">
 </head>
 <body>
+<div class="form-container">
     <h2>Register</h2>
     <form method="POST" action="register.php">
         <label for="account_name">Adventurer's Name:</label>
@@ -34,6 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
         <button type="submit">Register</button>
     </form>
-    <button onclick="window.location.href='index.php'">Back</button>
+    <button onclick="window.location.href='index.php'" class="back-button">Back</button>
+</div>
 </body>
 </html>
