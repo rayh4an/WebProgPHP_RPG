@@ -8,6 +8,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $userData = $accountName . ":" . $email . ":" . password_hash($password, PASSWORD_DEFAULT) . "\n";
     file_put_contents("users.txt", $userData, FILE_APPEND);
 
+    $_SESSION['name'] = $accountName;
+    echo "Name saved in session: " . $_SESSION['name'];
     // Redirect to menu page
     header("Location: menu.php");
     exit();

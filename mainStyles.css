@@ -49,7 +49,7 @@ h1 {
     padding: 10px;
     font-size: 1em;
     cursor: pointer;
-    background-color: #4CAF50;
+    background-color: blue;
     color: white;
     border: none;
     border-radius: 5px;
@@ -58,7 +58,7 @@ h1 {
 }
 
 .buttons button:hover {
-    background-color: #45a049;
+    background-color: blue;
 }
 
 

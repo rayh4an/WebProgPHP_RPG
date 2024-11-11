@@ -6,6 +6,103 @@ if (!isset($_SESSION['karma'])) $_SESSION['karma'] = 0;
 if (!isset($_SESSION['strength'])) $_SESSION['strength'] = 1;
 if (!isset($_SESSION['choice'])) $_SESSION['choice'] = 1;
 
+function displayCompletionPageGood($message) {
+    echo "
+        <html>
+        <head>
+            <style>
+                body {
+                    background-color: green;
+                    color: white; /* White text for contrast */
+                    font-family: Arial, sans-serif;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 100vh;
+                    margin: 0;
+                    text-align: center;
+                }
+                .completion-container {
+                    max-width: 600px;
+                    padding: 20px;
+                    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent overlay */
+                    border-radius: 8px;
+                }
+                button {
+                    padding: 10px 20px;
+                    font-size: 1em;
+                    background-color: #333;
+                    color: white;
+                    border: none;
+                    border-radius: 4px;
+                    cursor: pointer;
+                }
+                button:hover {
+                    background-color: #555;
+                }
+            </style>
+        </head>
+        <body>
+            <div class='completion-container'>
+                <h2>$message</h2>
+                <button onclick=\"window.location.href='menu.php'\">Return to Menu</button>
+            </div>
+        </body>
+        </html>
+    ";
+    session_destroy();
+    exit();
+}
+
+function displayCompletionPageBad($message) {
+    echo "
+        <html>
+        <head>
+            <style>
+                body {
+                    background-color: red;
+                    color: white; /* White text for contrast */
+                    font-family: Arial, sans-serif;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 100vh;
+                    margin: 0;
+                    text-align: center;
+                }
+                .completion-container {
+                    max-width: 600px;
+                    padding: 20px;
+                    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent overlay */
+                    border-radius: 8px;
+                }
+                button {
+                    padding: 10px 20px;
+                    font-size: 1em;
+                    background-color: #333;
+                    color: white;
+                    border: none;
+                    border-radius: 4px;
+                    cursor: pointer;
+                }
+                button:hover {
+                    background-color: #555;
+                }
+            </style>
+        </head>
+        <body>
+            <div class='completion-container'>
+                <h2>$message</h2>
+                <button onclick=\"window.location.href='menu.php'\">Return to Menu</button>
+            </div>
+        </body>
+        </html>
+    ";
+    session_destroy();
+    exit();
+}
+
+
 // Update stats and progress through choices based on user input
 if (isset($_POST['option'])) {
     $option = $_POST['option'];
@@ -139,33 +236,19 @@ if (isset($_POST['option'])) {
     //Castle
     } elseif ($choice == 13) { // Final choice
         if ($option == "join_tyrant" && $_SESSION['karma'] <= -5) {
-            echo "<h2>You become the tyrant's loyal knight and heir.</h2>";
-            session_destroy();
-            exit();
+            displayCompletionPageBad("You become the tyrant's loyal knight and heir.");
         } elseif ($option == "throne_tyrant" && $_SESSION['karma'] <= -5 && $_SESSION['strength'] >= 8) {
-            echo "<h2>You kill the tyrant and become the new ruler, bringing more suffering.</h2>";
-            session_destroy();
-            exit();
+            displayCompletionPageBad("You kill the tyrant and become the new ruler, bringing more suffering.");
         } elseif ($option == "convince_tyrant" && $_SESSION['karma'] >= 10) {
-            echo "<h2>You convince the tyrant to change his ways. You become his kingdom's counselor.</h2>";
-            session_destroy();
-            exit();
+            displayCompletionPageGood("You convince the tyrant to change his ways. You become his kingdom's counselor.");
         } elseif ($option == "throne_tyrant" && $_SESSION['karma'] >= 5 && $_SESSION['strength'] >= 8) {
-            echo "<h2>You kill the tyrant and become a great ruler, making the world a better place.</h2>";
-            session_destroy();
-            exit();
+            displayCompletionPageGood("You kill the tyrant and become a great ruler, making the world a better place.");
         } elseif ($option == "kill_tyrant" && $_SESSION['strength'] >= 8) {
-            echo "<h2>You kill the tyrant and leave to seek new adventures.</h2>";
-            session_destroy();
-            exit();
+            displayCompletionPageGood("You kill the tyrant and leave to seek new adventures.");
         } elseif ($option == "throne_tyrant" && $_SESSION['strength'] < 8) {
-            echo "<h2>You Challenge the Tyrant, but he ends up killing you. Your journey ends in failure.</h2>";
-            session_destroy();
-            exit();
+            displayCompletionPageBad("You challenge the tyrant, but he ends up killing you. Your journey ends in failure.");
         } elseif ($option == "kill_tyrant" && $_SESSION['strength'] < 8) {
-            echo "<h2>You Challenge the Tyrant, but he ends up killing you. Your journey ends in failure.</h2>";
-            session_destroy();
-            exit();
+            displayCompletionPageBad("You challenge the tyrant, but he ends up killing you. Your journey ends in failure.");
         }
     }
 }

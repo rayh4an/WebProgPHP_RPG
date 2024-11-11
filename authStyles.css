@@ -11,7 +11,7 @@
 
 .form-container h2 {
     text-align: center;
-    color: #4CAF50; /* Match button color or other theme colors */
+    color: lightblue;
     font-weight: bold;
     margin-bottom: 20px;
 }
@@ -35,7 +35,7 @@
 
 .form-container button[type="submit"] {
     width: 100%;
-    background-color: #4CAF50;
+    background-color: blue;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -46,7 +46,7 @@
 }
 
 .form-container button[type="submit"]:hover {
-    background-color: #45a049;
+    background-color: blue;
 }
 
 .form-container .back-button {

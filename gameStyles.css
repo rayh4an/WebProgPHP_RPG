@@ -53,7 +53,7 @@ body {
 }
 
 form button[type="submit"] {
-    background-color: #4CAF50;
+    background-color: blue;
     color: white;
     border: solid black;
     padding: 10px 20px;
@@ -62,7 +62,7 @@ form button[type="submit"] {
 }
 
 form button[type="submit"]:hover {
-    background-color: #45a049;
+    background-color: blue;
 }
 
 form button[name="reset"] {
