@@ -222,31 +222,35 @@ if (isset($_POST['option'])) {
     <?php
     // Display current scenario text based on choice
     if ($_SESSION['choice'] == 1) {
-        echo "<p>Village under attack by goblins. What do you do?</p>";
+        echo "<p>Your journey starts and you decide to go to the local village to gather suppliers. </p>";
+        echo "<p>When you arrive you see the village is under attack by goblins. What do you do?</p>";
     } elseif ($_SESSION['choice'] == 2) {
-        echo "<p>You find the goblin hideout. How do you proceed?</p>";
+        echo "<p>You go wandering about and find the goblins' hideout. How do you proceed?</p>";
     } elseif ($_SESSION['choice'] == 3) {
+        echo "<p>After visiting the goblins' hideout, you venture into the forest.</p>";
         echo "<p>You meet a Fairy who warns you that a dangerous Troll resides nearby. What will you do?</p>";
     } elseif ($_SESSION['choice'] == 4) {
-        echo "<p>You walk down the path and must choose either to go left or right.</p>";
+        echo "<p>After ignoring the Fairy's advice you see there is path that splits off in 2 directions.</p>";
     } elseif ($_SESSION['choice'] == 5) {
-        echo "<p>You encounter a Troll! Do you fight or try to convince it to let you go?</p>";
+        echo "<p>After going left, you encounter a Troll! Do you fight or try to convince it to let you go?</p>";
     } elseif ($_SESSION['choice'] == 6) {
-        echo "<p>You reach the mountain and see a long path that wraps around, which seems safe. You also see a steep climb up the mountain. Which path will you take?</p>";
+        echo "<p>Once you leace the forest you arrive at a mountain.</p>";
+        echo "<p>You see a long path that wraps around, which seems safe. You also see a steep climb up the mountain. Which path will you take?</p>";
     } elseif ($_SESSION['choice'] == 7) {
-        echo "<p>On the mountain path, you encounter a wizard with a broken leg who asks for help. How will you respond?</p>";
+        echo "<p>On the mountain path, you encounter a wizard with a broken leg who asks for help. He says if you help he will compensate you with a very powerful bow. How will you respond?</p>";
     } elseif ($_SESSION['choice'] == 8) {
         echo "<p>You meet a group of bandits who demand your belongings. How do you handle the situation?</p>";
     } elseif ($_SESSION['choice'] == 9) {
-        echo "<p>You arrive at some ancient ruins and see a glowing amulet on the ground. As you approach it, you hear ominous whispers. What do you do?</p>";
+        echo "<p>Once reaching the top of the mountain, you see a portal. You decide to head through the portal.</p>";
+        echo "<p>Now you have arrived at some ancient ruins and see a glowing amulet on the ground. As you approach it, you hear ominous whispers. What do you do?</p>";
     } elseif ($_SESSION['choice'] == 10) {
         echo "<p>In the ruins, you encounter a spirit who tells you this is a graveyard and urges you to leave. How do you respond?</p>";
     } elseif ($_SESSION['choice'] == 11) {
-        echo "<p>You look at the water of the lake. Will you drink it, or ignore the urge?</p>";
+        echo "<p>After leaving the ruins, you get to a beautiful lake. You are feeling a bit thirsty so you look at the water of the lake. Will you drink it, or ignore the urge?</p>";
     } elseif ($_SESSION['choice'] == 12) {
         echo "<p>While walking along the lake's coast, you are approached by a fisherman. He informs you of a terrible monster in the lake that has terrorized his family. Will you help him, or avoid the danger?</p>";
     } elseif ($_SESSION['choice'] == 13) {
-        echo "<p>You finally reach the Tyrant's castle and are granted an audience in his throne room. How will you confront him?</p>";
+        echo "<p>After leaving the lake you walk the path ahead and finally reach the Tyrant's castle and are granted an audience in his throne room. How will you confront him?</p>";
     }
     ?>
     </div>
@@ -267,7 +271,7 @@ if (isset($_POST['option'])) {
         echo '<button type="submit" name="option" value="ignore">Ignore the Fairy\'s warnings</button>';
     } elseif ($_SESSION['choice'] == 4) {
         echo '<button type="submit" name="option" value="left">Go Left</button>';
-        echo '<button type="submit" name="option" value="right">Go Right (find a new sword, +1 strength)</button>';
+        echo '<button type="submit" name="option" value="right">Go Right. You see a shiny sword in the distance. </button>';
     } elseif ($_SESSION['choice'] == 5) {
         echo '<button type="submit" name="option" value="fight">Fight the Troll</button>';
         echo '<button type="submit" name="option" value="convince">Convince the Troll to let you go (KARMA ≥ 2)</button>';
